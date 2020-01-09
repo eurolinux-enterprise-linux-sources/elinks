@@ -3,7 +3,7 @@
 Name:      elinks
 Summary:   A text-mode Web browser
 Version:   0.12
-Release:   0.34.%{prerel}%{?dist}
+Release:   0.36.%{prerel}%{?dist}
 License:   GPLv2
 URL:       http://elinks.or.cz
 Group:     Applications/Internet
@@ -156,6 +156,12 @@ exit 0
 %{_mandir}/man5/*
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 0.12-0.36.pre6
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.12-0.35.pre6
+- Mass rebuild 2013-12-27
+
 * Mon Feb 25 2013 Kamil Dudka <kdudka@redhat.com> - 0.12-0.34.pre6
 - update to latest upstream pre-release
 - drop unneeded patches
