@@ -1,7 +1,7 @@
 Name:      elinks
 Summary:   A text-mode Web browser
 Version:   0.12
-Release:   0.20.pre5%{?dist}
+Release:   0.21.pre5%{?dist}
 License:   GPLv2
 URL:       http://elinks.or.cz
 Group:     Applications/Internet
@@ -38,6 +38,7 @@ Patch7: elinks-0.11.3-macropen.patch
 Patch8: elinks-scroll.patch
 Patch9: elinks-nss.patch
 Patch10: elinks-nss-inc.patch
+Patch11: elinks-CVE-2012-4545.patch
 
 %description
 Elinks is a text-based Web browser. Elinks does not display any images,
@@ -77,6 +78,9 @@ quickly and swiftly displays Web pages.
 
 # Port elinks to use NSS library for cryptography (#346861) - incremental patch
 %patch10 -p1
+
+# CVE-2012-4545
+%patch11 -p1
 
 %build
 ./autogen.sh
@@ -135,6 +139,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man5/*
 
 %changelog
+* Mon Oct 29 2012 Kamil Dudka <kdudka@redhat.com> - 0.12-0.21.pre5
+- do not delegate GSSAPI credentials (CVE-2012-4545)
+
 * Thu Jan 07 2010 Kamil Dudka <kdudka@redhat.com> - 0.12-0.20.pre5
 - remove patch for configure script to find OpenSSL (we use NSS instead)
 - rediffed all patches with non-zero offset
